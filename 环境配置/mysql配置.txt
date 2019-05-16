@@ -1,0 +1,25 @@
+sudo cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf.bak	拷贝一个备份
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf	用vim打开配置文件
+#bind-address           = 127.0.0.1	注释绑定地址即不绑定地址
+sudo mysql -h 127.0.0.1 -P 3306 -u root -p	进入mysql
+sudo mysql -u root -p	简写
+grant all privileges on *.* to 'root'@'%' identified by '密码' with grant option;	把数据库所有表授权给所有用户
+service mysql restart	重启数据库
+service mysql start	启动数据库
+service masql stop	停止数据库
+sudo vim /etc/mysql/debian.cnf
+netstat -tap | grep mysql	查询服务器是否启动
+
+修改root密码
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newspass');
+SET PASSWORD FOR 'root'@'%' = PASSWORD('newpass');
+
+删除mysql的数据文件
+sudo rm /var/lib/mysql/ -R
+
+删除mysql的配置文件
+sudo rm /etc/mysql/ -R
+
+自动卸载mysql的程序
+sudo apt-get autoremove mysql* --purge	
+sudo apt-get remove apparmor

@@ -1,0 +1,85 @@
+查看目前所在分支
+	zhang@zhang-virtual-machine:~/git/test$ git checkout master[分支名称]
+创建新分支病切换到新分支
+	zhang@zhang-virtual-machine:~/git/test$ git checkout -b dev
+查看是否有未跟踪文件
+	zhang@zhang-virtual-machine:~/git/test$ git status
+查看版本信息
+	zhang@zhang-virtual-machine:~/git/test$ git log
+推送领先于远程的，时间较慢
+	zhang@zhang-virtual-machine:~/git/test$ git push orogin dev
+拉取领先于本地的
+	zhang@zhang-virtual-machine:~/git/test$ git pull
+回到版本
+zhang@zhang-virtual-machine:~/git/test$ git reset --hard b940a52310c59a120019f8[版本号]
+
+
+
+1.配置作者信息
+	zhang@zhang-virtual-machine:~$ vim .gitconfig 
+2.生成ssh-key,一路回车
+	zhang@zhang-virtual-machine:~$ ssh-keygen -t rsa -C 'z31926990@163.com'
+3.进入ssh
+	zhang@zhang-virtual-machine:~$ cd .ssh/
+	zhang@zhang-virtual-machine:~/.ssh$ ls -al
+4.查看ssh-key
+zhang@zhang-virtual-machine:~/.ssh$ cat id_rsa.pub 
+5.创建工作目录
+	zhang@zhang-virtual-machine:~$ mkdir git
+6.进入工作目录
+	zhang@zhang-virtual-machine:~$ cd git/
+7.从远程克隆到本地
+	zhang@zhang-virtual-machine:~/git$ git clone git@github.com:dd31926990/test.git
+8.出bug的解决方法
+	正克隆到 'test'...
+	The authenticity of host 'github.com (192.30.253.112)' can't be established.
+	RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+	Are you sure you want to continue connecting (yes/no)? 
+	Host key verification failed.
+	fatal: Could not read from remote repository.
+	
+	Please make sure you have the correct access rights
+	and the repository exists.
+	1.第一步
+		zhang@zhang-virtual-machine:~/git$ eval "$(ssh-agent -s)"
+	2.第二步
+		zhang@zhang-virtual-machine:~/git$ ssh-add
+9.再次克隆，克隆完成后创建分支
+	zhang@zhang-virtual-machine:~/git$ git clone git@github.com:dd31926990/test.git
+	zhang@zhang-virtual-machine:~/git$ git checkout -b dev[分支名]
+
+
+10.项目写好后建立跟踪
+	zhang@zhang-virtual-machine:~/git/test$ git add dailyfresh
+11.上传跟踪
+	zhang@zhang-virtual-machine:~/git/test$ git commit -m '登录完成后'
+12.推送到远程服务器
+	zhang@zhang-virtual-machine:~/git/test$ git push origin dev[要推送的分支名称]
+13.跟踪远程服务器，自己的dev分支跟踪远程的origin/dev分支
+	zhang@zhang-virtual-machine:~/git/test$ git branch --set-upstream-to=origin/dev dev
+14.再次查看的话会说与上游分支一致
+	zhang@zhang-virtual-machine:~/git/test$ git status
+	位于分支 dev
+	您的分支与上游分支 'origin/dev' 一致。
+	无文件要提交，干净的工作区
+15.当更改完项目后
+	1.zhang@zhang-virtual-machine:~/git/test$ git status
+	2.zhang@zhang-virtual-machine:~/git/test$ git add dailyfresh
+	3.zhang@zhang-virtual-machine:~/git/test$ git commit -m '增加文档后'
+16.再次查看，提示领先于远程分支
+	zhang@zhang-virtual-machine:~/git/test$ git status
+	位于分支 dev
+	您的分支领先 'origin/dev' 共 1 个提交。
+ 	 （使用 "git push" 来发布您的本地提交）
+	无文件要提交，干净的工作区
+17.直接推送，速度会有点慢，等一下
+	zhang@zhang-virtual-machine:~/git/test$ git push
+18.再次查看就一致了
+	zhang@zhang-virtual-machine:~/git/test$ git status
+
+19.拉取远程服务器分支
+	zhang@zhang-virtual-machine:~/git/test$ git pull origin dev[远程服务器分支]
+
+
+
+
