@@ -1,5 +1,5 @@
-# YourDreams  
-	    ---专注于为coder服务
+# YourDreams    
+                                    20年专注于为coder服务
 # 一、公司名称，网站名称，网站域名
 - 1.公司名称:待定
 - 2.网站名称:待定
@@ -8,17 +8,34 @@
 - 数据库名为:db_YourDreams
   - 数据表(需要重新设计):
     - 客户_程序员信息表   tbl_client_info
-       ###### 字段
-      - user_name
-      - password
-      - mobile
-      - address
-      - code    if code==1: is client   if code==0: is coder
+        - 字段
+        - user_name 必填
+        - password 必填
+        - mobile 必填
+        - address 必填
+        - code 选择我是发布需求者,接需求者 if code==1: is client;   if code==0: is coder;
     - 订单发布信息表 tbl_order_send
-      - 订单标题
+      - send_id
+      - 任务标题 必填
+      - 任务内容 必填
+      - 任务时长 必填
+      - 任务佣金 必填
+      - 任务附加说明 可选
+      - 任务紧急情况  可选
     - 建立发布_显示关联 tbl_send_show
+        - id
+        - send_id
+        - show_id
+       
     - 订单显示信息表    tbl_order_show
-    - 
+      - show id
+      - 任务标题 
+      - 任务内容 
+      - 任务时长 
+      - 任务佣金 
+      - 任务附加说明 有则显示
+      - 任务紧急情况  可选
+      - 任务状态
 - 1.程序员登录注册
 - 2.用户登录注册
 - 3.管理员页面
