@@ -1,4 +1,4 @@
-# YourDreams
+# YourDreams  ---专注于为coder服务
 # 一、公司名称，网站名称，网站域名
 - 1.公司名称:待定
 - 2.网站名称:待定
@@ -7,7 +7,7 @@
 - 数据库名为:db_YourDreams
   - 数据表(需要重新设计):
     - 客户_程序员信息表   tbl_client_info
-       #### 字段
+       ###### 字段
       - user_name
       - password
       - mobile
