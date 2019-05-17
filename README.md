@@ -6,19 +6,15 @@
 # 二、网站功能需求
 - 数据库名为:db_YourDreams
   - 数据表(需要重新设计):
-    - 客户信息表   tbl_client_info
+    - 客户_程序员信息表   tbl_client_info
+       #### 字段
       - user_name
       - password
       - mobile
       - address
-      - ?
-    - 程序员信息表 tbl_coder_info
-      - user_name
-      - password
-      - mobile
-      - address
-      - ?
+      - code    if code==1: is client   if code==0: is coder
     - 订单发布信息表 tbl_order_send
+      - 订单标题
     - 建立发布_显示关联 tbl_send_show
     - 订单显示信息表    tbl_order_show
     - 
