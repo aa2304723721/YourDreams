@@ -14,6 +14,7 @@
         - mobile 必填
         - address 必填
         - code 选择我是发布需求者,接需求者 if code==1: is client;   if code==0: is coder;
+        - 信誉分  默认100分
     - 订单发布信息表 tbl_order_send
       - send_id
       - 任务标题 必填
