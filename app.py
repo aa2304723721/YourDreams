@@ -28,6 +28,10 @@ app.config.from_object(Configs)
 # 创建数据库sqlalchemy对象
 db = SQLAlchemy(app)
 
+manager = Manager(app, db)
+Migrate(app, db)
+manager.add_command('db', MigrateCommand)
+
 
 class Users(db.Model):
     """用户表信息"""
@@ -98,5 +102,4 @@ def index():
 
 
 if __name__ == '__main__':
-    print(app.url_map)
-    app.run(debug=True)
+    manager.run()
