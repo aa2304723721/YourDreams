@@ -11,7 +11,8 @@
         - 字段
         - user_name 必填
         - password 必填
-        - mobile 必填
+        - mobile 必填 接收验证码
+        - 邮箱  必填
         - address 必填
         - code 选择我是发布需求者,接需求者 if code==1: is client;   if code==0: is coder;
         - 信誉分  默认100分
