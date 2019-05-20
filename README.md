@@ -29,7 +29,7 @@
         - show_id
        
     - 订单显示信息表    tbl_order_show
-      - show id
+      - id
       - 任务标题 
       - 任务内容 
       - 任务时长 
